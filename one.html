@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>first homework</title>
+    <meta charset="UTF-8">
+    <style>
+        .box {
+            color:red;
+        }
+        .border{
+            width:500px;
+        }
+    </style>
+</head>
+<body>
+    <h1>毕业生信息</h1>
+	<form id="testform" method="get" action="">
+		<fieldset class="border">
+			<legend class="box">
+				学生信息
+            </legend>
+            姓&nbsp;&nbsp;名&nbsp;<input type="text" name="name" autofocus="autofocus" required placeholder="请输入姓名"/>
+            <span class="box">*</span>
+            <br/>
+            学&nbsp;&nbsp;号&nbsp;<input type="number" name="number" autofocus="autofocus" required placeholder="请输入学号"/>
+            <span class="box">*</span>
+            <br/>
+            手&nbsp;&nbsp;机&nbsp;<input type="tel" name="phone" autofocus="autofocus" required placeholder="请输入手机号"/>
+            <span class="box">*</span>
+            <br/>
+            邮&nbsp;&nbsp;箱&nbsp;<input type="email" name="mail" autofocus="autofocus" required placeholder="请输入邮箱地址"/>
+            <span class="box">*</span>
+            <br/>
+        </fieldset>
+        <fieldset class="border">
+            <legend class="box">
+                录取情况
+            </legend>
+            录取学校&nbsp;<input type="text" name="school" autofocus="autofocus" required/>
+            <br/>
+            入学成绩&nbsp;<input type="number" name="result" autofocus="autofocus" required/>
+            <br/>
+            入学时间&nbsp;<input type="date" name="date1"/>
+        </fieldset>
+        <br/>
+		&nbsp;<input type="submit" name="submit" value="提交"/>
+	</form>
+</body>
+</html>
+
+
