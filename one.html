@@ -36,7 +36,14 @@
             <legend class="box">
                 录取情况
             </legend>
-            录取学校&nbsp;<input type="text" name="school" autofocus="autofocus" required/>
+            录取学校&nbsp;<input type="search" name="school" autofocus="autofocus" list="schools"/>
+            <datalist id="schools">
+                <option>河北师范大学</option>
+                <option>河北科技大学</option>
+                <option>河北金融学院</option>
+                <option>石家庄铁路大学</option>
+                <option>北京师范大学</option>
+            </datalist>
             <br/>
             入学成绩&nbsp;<input type="number" name="result" autofocus="autofocus" required/>
             <br/>
