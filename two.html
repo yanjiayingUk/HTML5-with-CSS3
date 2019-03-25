@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <style>
+        .del{
+            border:0px;
+            color:white;
+        }
+        #box{
+            width:500px;
+        }
+        #box span{
+            margin-left:10px;
+            list-style:none;
+            background-color:#cdcdcd;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="textarea" method="get" action="">
+        <input id="memo" type="text" name="search" autofocus="autofocus" value="" required placeholder="请输入想查找的商品"/>
+        <input type="button" value="搜索" onclick="saveStorage('memo');" />
+        <br/>
+        <p>最近搜索</p>
+        <div id="box">
+                
+        </div>
+        <input class="del" type="button" value="X" onclick="clearStorage('box');" />
+    </form>
+</body>
+<script type="text/javascript">
+    var tar= document.getElementById('box');
+    tar.innerHTML='无搜索记录！';
+
+    var res="";
+        for (var i =  localStorage.length-1; i > localStorage.length-6; i--) {
+            var key1 = localStorage.key(i);
+            var value1 = localStorage.getItem(key1);
+            if(key1!=null){
+                res+= '<span>' + value1 + '</span>';
+            }
+        }
+        var target1 = document.getElementById("box");
+        target1.innerHTML = res;
+
+    function saveStorage(id) { 
+        var data = document.getElementById(id).value;
+        var time = new Date().getTime();
+        localStorage.setItem(time, data);
+        loadStorage('box');
+    }
+    function loadStorage(id) {
+        var result="";
+        for (var i =  localStorage.length-1; i > localStorage.length-6; i--) {
+            var key = localStorage.key(i);
+            var value = localStorage.getItem(key);
+            if(key!=null){
+                result += '<span>' + value + '</span>';
+            }
+        }
+        var target = document.getElementById(id);
+        target.innerHTML = result;
+    }
+    function clearStorage() {
+        localStorage.clear();
+        loadStorage('box');
+        var target = document.getElementById('box');
+        target.innerHTML='无搜索记录！';
+    }
+</script>
+
+</html>
