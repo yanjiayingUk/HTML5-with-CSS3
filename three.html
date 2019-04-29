@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>three</title>
+    <style>
+        canvas {
+            background-size : 100% 100%;
+            width: 300px;
+            height: 150px;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    <script>
+        var canvas = document.getElementById('canvas');
+        var ctx = canvas.getContext('2d');
+        var a=Math.random();
+        if(a<0.05){
+            canvas.style.backgroundImage ='url(1.png)';
+        }
+        else{
+            canvas.style.backgroundImage ='url(0.png)';
+        }
+        ctx.beginPath();
+        ctx.fillStyle = "#999";
+        ctx.fillRect(0,0,500,500);
+        ctx.fill();
+
+
+
+        canvas.onmousedown= function () {
+            canvas.onmousemove = function (e) {
+                var event = e || window.event;
+                ctx.globalCompositeOperation = 'destination-out';
+                ctx.beginPath();
+                ctx.arc(e.clientX, e.clientY, 30, 0, Math.PI*2, false);
+                ctx.fillStyle = "rgba(0,0,0,1)";
+                ctx.fill();
+                ctx.endPath();
+            }
+            canvas.onclick= function (e) {
+                ctx.globalCompositeOperation = 'destination-out';
+                ctx.beginPath();
+                ctx.arc(e.clientX, e.clientY, 30, 0, Math.PI*2, false);
+                ctx.fillStyle = "rgba(0,0,0,1)";
+                ctx.fill();
+            }
+        }
+        canvas.onmouseup = function () {
+            var imgData = ctx.getImageData(0, 0, 350, 120);
+            var data = imgData.data; 
+            var length = data.length; 
+            var transparent = 0; 
+            for (var i = 0; i < length; i += 4) { 
+                var alpha = data[i + 3]; 
+                if (alpha < 1)
+                    transparent++;
+            }
+            var percentage = transparent / (length / 4);
+            if (percentage > 0.85){
+                ctx.clearRect(0,0,canvas.width,canvas.height);
+            }
+            canvas.onmousemove = function () {
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>
