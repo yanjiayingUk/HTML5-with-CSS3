@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>背景</title>
+    <style type="text/css">
+        .box{
+            width:384px;
+            height:452px;
+            box-shadow:2px 2px 0px 7px rgb(219, 217, 217);
+            position:relative; 
+            overflow: hidden;
+        }
+		.first{
+			width: 384px;
+			height: 252px;
+			background-repeat: no-repeat;
+	        background-size: contain;
+            background-image: url(zhanqiao.jpg);
+            transition: transform 1s ease;
+		}
+        .first div{
+            opacity:0;
+            width:384px;
+            height:252px;
+            background-color: black;
+            transition: opacity 1s ease;
+        }
+        .box:hover .first div{
+            opacity:0.3;
+        }
+        .two{
+            height:170px;
+            width:384px;
+            position:relative;
+            background-color: white;
+            transition: transform 0.5s ease;
+        }
+        .box:hover .first{
+            transform: scale(1.2);
+        }
+        .box:hover .two{
+            transform: scaleY(2.4);
+        }
+        .box:hover .two1{
+            top:108px;
+        }
+        .box:hover .two2{
+            top:136px;
+        }
+        .box:hover .two3{
+            top:180px;
+        }
+        .two1{
+            position:absolute;
+            height:25px;
+            width:50px;
+            background-color: #ff5e00;
+            top:227px;
+            left:0px;
+            color:white;
+            font-size:15px;
+            text-indent:10px;
+            transition: top 0.5s ease;
+        }
+        .two2{
+            position:absolute;
+            left:20px;
+            top:255px;
+            transition: top 0.5s ease;
+        }
+        .two3{
+            position:absolute;
+            left:20px;
+            top:299px;
+            color:#ff5e00;
+            font-size: 20px;
+            transition: top 0.5s ease;
+        }
+        .three{
+            position:absolute;
+            left:0px;
+            bottom:0px;
+            height:30px;
+            width:384px;
+            font-size: 13px;
+            color:gray;
+            text-indent:30px;
+        }
+        .four{
+            position:absolute;
+            background-color:#ff5e00;
+            border-radius:25px;
+            width: 50px;
+            height:50px;
+            top:20px;
+            right:20px;
+            color:white;
+            text-align: center;
+        }
+        .last{
+            opacity:0;
+            width:350px;
+            position:absolute;
+            bottom:50px;
+            left:20px;
+            color:rgb(54, 51, 51);
+            line-height: 30px;
+            transition: opacity 0.2s linear;
+        }
+        .box:hover .last{
+            opacity:1;
+        }
+	</style>
+</head>
+<body>
+	<div class="box">
+        <div class="first">
+            <div></div>
+        </div>
+        <div class="two"></div>
+        <div class="two1">照片</div>
+        <h2 class="two2">青岛栈桥</h2>
+        <p class="two3">国家AAAA级旅游景区</p>
+        <div class="three">
+            10分钟前&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;123评论
+        </div>
+        <div class="four">
+            15<br/>五月
+        </div>
+        <p class="last">
+            青岛栈桥是青岛海滨风景区的景点之一，是国务院于1982年首批公布的国家级
+            风景名胜区。青岛栈桥位于有人如织的青岛中山路南端，桥身从海岸探入如弯月
+            般的青岛湾深处。桥身供有人参观并在此停靠旅游船，有次乘船可看海上青岛
+        </p>
+	</div>
+</body>
+</html>
